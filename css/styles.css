@@ -1,3 +1,21 @@
+* {
+  box-sizing: border-box;
+  font-family: "gothic", sans-serif;
+}
 
+div.container {
+  width: 25vw;
+  border: solid black 1px;
+}
+
+button {
+  width: 2.4rem;
+  border: solid black 1px;
+}
+
+span {
+  font-size: 2rem;
+  text-align: right;
+}
 
 /*# sourceMappingURL=styles.css.map */
