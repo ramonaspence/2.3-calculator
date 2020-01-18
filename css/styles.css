@@ -8,13 +8,17 @@ div.container {
   border: solid black 1px;
 }
 
+.output {
+  font-size: 4rem;
+}
+
 button {
-  width: 2.4rem;
+  width: 4.5rem;
   border: solid black 1px;
 }
 
 span {
-  font-size: 2rem;
+  font-size: 2.4rem;
   text-align: right;
 }
 
