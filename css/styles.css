@@ -10,11 +10,13 @@ div.container {
 
 .output {
   font-size: 4rem;
+  height: 50%;
 }
 
 button {
   width: 4.5rem;
   border: solid black 1px;
+  background-color: white;
 }
 
 span {
