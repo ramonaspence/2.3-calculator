@@ -1,14 +1,4 @@
-// let $buttons = document.querySelectorAll('button');
-//
-// let pushNumber = (event) => {
-//   console.log('yesss');
-// }
-//
-// for (let i = 0; i <= $buttons.length; i = i++) {
-//   $buttons[i].addEventListener('click', pushNumber);
-// }
 
-let $numbers = document.querySelectorAll('button.num');
 let $output = document.querySelector('span.output');
 
 let pushNumber = () => {
@@ -17,23 +7,18 @@ let pushNumber = () => {
 
 }
 
-// let val = document.querySelectorAll('button.num[value=""]');
-let el = document.querySelectorAll("button.num");
-let val = el.values(); // this element contains more than 1 DOMs.
-for (let i = 0; i < el.length; i++) {
-  el[i].onclick = function() {
-    console.log(this.value);//I've got this console.logging the element and value ie"<button class="num" value=""></button>"
-    $output.textContent = (this.value);//I want to change the text in the output span to match the value of the button clicked
+let button = document.querySelectorAll("button.num");
+let val = button.values(); // this element contains more than 1 DOMs.
+for (let i = 0; i < button.length; i++) {
+  button[i].onclick = function() {
+    $output.textContent = (this.value);
   };
 }
-//I need to make this console.log the NUMBER that you click.
-//so how can I reference that specific button with that specific value?
 
-
-// for (i = 0; i < $numbers[i]; i + 1) {
-//   $numbers[0].addEventListener('click', pushNumber);
-// }
-
-// $numbers = pushNumber();
-
-// $numbers.addEventListener(click, event-listener);
+let op = document.querySelectorAll("button.operator");
+let act = op.values();
+for (let i = 0; i < op.length; i++) {
+  op[i].onclick = function() {
+    $output.textContent = (this.value);
+  }
+}
