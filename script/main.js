@@ -22,11 +22,10 @@ for (let i = 0; i < operators.length; i++) {
 }
 
 let $clear = document.querySelector("button.clear");
-let blank = ('');
 
-  let clear = () => {
-    $clear.addEventListener.onclick = function() {
-      $output.append(this.value);
+  {
+    $clear.onclick = function() {
+      $output.replace('');
 
     }
   }
