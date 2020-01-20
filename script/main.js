@@ -29,6 +29,23 @@ for (let i = 0; i < $operators.length; i++) {
   })
 }
 
+let doMath = () => {
+  $equals.addEventListener('click', (event) => {
+    let add = (accumulator, currentValue) => accumulator + currentValue;
+    let sub = (accumulator, currentValue) => accumulator - currentValue;
+    let div = (accumulator, currentValue) => accumulator / currentValue;
+    let mult = (accumulator, currentValue) => accumulator * currentValue;
+    expression.map(number);
+    if expression.includes(+) {
+      console.log(expression.reduce(add));
+    } else if (expression.includes(-)); {
+      console.log(expression.reduce(sub));
+    } else if (expression.includes(*)); {
+      console.log(expression.reduce(mult));
+
+    }
+  })
+}
 
 
         // let operators = document.querySelectorAll("button.operator");
