@@ -2,7 +2,8 @@
   'use strict';
 
   let $output = document.querySelector('span.output');
-  let myArray = [];
+  let numArray = [];
+  let opArray = [];
   let $numbers = document.querySelectorAll("button.num");
   let $operators = document.querySelectorAll("button.operator");
 
@@ -16,7 +17,7 @@
   // }
   for (let i = 0; i < $numbers.length; i++) {
     $numbers[i].addEventListener('click', (event) => {
-      myArray.push(event.target.value);
+      numArray.push(event.target.value);
       $output.textContent = (event.target.value);
 
     })
@@ -24,18 +25,31 @@
 
   for (let i = 0; i < $operators.length; i++) {
     $operators[i].addEventListener('click', (event) => {
-      myArray.push(event.target.value);
+      opArray.push(event.target.value);
       $output.textContent = (event.target.value);
     })
   }
 
-  let $equals = document.querySelector("button.equals");
-  while (myArray.length >= 2) {
-    $equals.addEventListener('click', event => {
-      $output.textContent = (myArray);
-      console.log(myArray);
-    })
-  }
+  myCalc;
+  let ops = [{}]
+
+//trying to create an array of operators and an array of numbers wherein
+//a for loop checks for a number and an operator together
+//then a function to evaluate those three array items
+//ad an eventListener to the equals button to fire the evalutation function.
+
+
+
+
+
+  //
+  // let $equals = document.querySelector("button.equals");
+  // while (myArray.length >= 2) {
+  //   $equals.addEventListener('click', event => {
+  //     $output.textContent = (myArray);
+  //     console.log(myArray);
+  //   })
+  // }
 
 
 
