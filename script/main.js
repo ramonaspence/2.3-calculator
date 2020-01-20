@@ -2,10 +2,10 @@
   'use strict';
 
   let $output = document.querySelector('span.output');
-  let expression = [];
+  let myArray = [];
   let $numbers = document.querySelectorAll("button.num");
   let $operators = document.querySelectorAll("button.operator");
-  let $equals = document.querySelectorAll("button.equals")
+
   // let val = numbers.values(); // this element contains more than 1 DOMs.
   // for (let i = 0; i < numbers.length; i++) {
   //   numbers[i].onclick = function() {
@@ -16,46 +16,50 @@
   // }
   for (let i = 0; i < $numbers.length; i++) {
     $numbers[i].addEventListener('click', (event) => {
-      window.alert(event.target.value);
-      expression.push(event.target.value);
+      myArray.push(event.target.value);
+      $output.textContent = (event.target.value);
 
     })
   }
 
   for (let i = 0; i < $operators.length; i++) {
     $operators[i].addEventListener('click', (event) => {
-      expression.push(event.target.value);
+      myArray.push(event.target.value);
+      $output.textContent = (event.target.value);
     })
   }
 
-  let doMath = () => {
-    let add = (accumulator, currentValue) => accumulator + currentValue;
-    let sub = (accumulator, currentValue) => accumulator - currentValue;
-    let div = (accumulator, currentValue) => accumulator / currentValue;
-    let mult = (accumulator, currentValue) => accumulator * currentValue;
-    expression.push(parse(int));
-    $equals.addEventListener('click', (event) => {
-      if (expression.includes('+')) {
-        console.log(expression.reduce(add));
-      } else if (expression.includes('-')) {
-        console.log(expression.reduce(sub));
-      } else if (expression.includes('*')) {
-        console.log(expression.reduce(mult));
-      } else {
-        console.log(expression.reduce(div));
-      }
+  let $equals = document.querySelector("button.equals");
+  while (myArray.length >= 2) {
+    $equals.addEventListener('click', event => {
+      $output.textContent = (myArray);
+      console.log(myArray);
     })
   }
 
-  let equals = () => {
-    $equals.addEventListener('click', (event) => {
-      expression.doMath();
-      console.log(expression);
-      return;
-    })
 
 
-  }
+
+
+
+  // let doMath = () => {
+  //   let add = (accumulator, currentValue) => accumulator + currentValue;
+  //   let sub = (accumulator, currentValue) => accumulator - currentValue;
+  //   let div = (accumulator, currentValue) => accumulator / currentValue;
+  //   let mult = (accumulator, currentValue) => accumulator * currentValue;
+  //   expression.push(parse(int));
+  //   $equals.addEventListener('click', (event) => {
+  //     if (expression.includes('+')) {
+  //       console.log(expression.reduce(add));
+  //     } else if (expression.includes('-')) {
+  //       console.log(expression.reduce(sub));
+  //     } else if (expression.includes('*')) {
+  //       console.log(expression.reduce(mult));
+  //     } else {
+  //       console.log(expression.reduce(div));
+  //     }
+  //   })
+  // }
 
 
 
