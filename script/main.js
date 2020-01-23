@@ -28,25 +28,41 @@
     })
   }
 
+  let cleanSlate = () => {
+    expression = [];
+    console.log(expression);
+    $output.textContent = "";
+
+  }
+
+
+  let $clear = document.querySelector('button.clear');
+  $clear.addEventListener('click', cleanSlate);
+
+
+
   let calculate = () => {
-    let num1 = Number(expression.splice(0, 2).join(''));
-    let num2 = Number(expression.splice(0, -2).join(''));
+    console.log('expression', expression)
+    let num1 = Number(expression.splice(0, 1).join(''));
+    let num2 = Number(expression.splice(1, 1).join(''));
     // how to check if an array contains a specific character
     let result;
     if (expression.includes('+')) {
-      expression.splice(1, 1);
-      result = num1 + num2;
+      // expression.splice(1, 1);
+       result = num1 + num2;
     } else if (expression.includes('-')) {
-      expression.splice(1, 1);
-      result = num1 - num2;
+      // expression.splice(1, 1);
+       result = num1 - num2;
     } else if (expression.includes('/')) {
-      expression.splice(1, 1);
-      result = num1 / num2;
-    } else(expression.includes('*'));
-    expression.splice(1, 1);
-    result = num1 * num2;
-    $output.textContent = (`${result}`);
-    console.log();
+      // expression.splice(1, 1);
+       result = num1 / num2;
+    } else if (expression.includes('*')) {
+      // console.log('expression', expression);
+      // expression.splice(1, 1);
+      result = num1 * num2;
+    }
+    $output.textContent = (result);
+    console.log(result);
   } //keeps giving me NaN, maybe due to textContent, maybe due to variable "result"
   //maybe due to operator being in array?
 
