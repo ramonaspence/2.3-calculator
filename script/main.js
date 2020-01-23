@@ -10,49 +10,48 @@
   let expression = [];
   let $output = document.querySelector('span.output');
   let $numbers = document.querySelectorAll('button.num');
+  let $equals = document.querySelector('button.equals');
 
   for (let i = 0; i < $numbers.length; i++) {
+
     $numbers[i].addEventListener('click', (event) => {
       expression.push(event.target.value);
-      $output.textContent = (event.target.value);
-
+      $output.append(event.target.value);
     })
-
-}
-
-
-
-
-let calculate = () => {
-  console.log('expression', expression);
-  // how to check if an array contains a specific character
-  if (expression.includes('+')) {
-    // do addition
-  } else if (expression.includes('-')) {
-    // do subtraction
-  } else if (expression.includes('/')) {
-    // do multiplication
-  } else if (expression.includes('*')) {
-    // do division
   }
-}
-
-  let $equals = document.querySelector('button.equals');
-  $equals.addEventListener('click', calculate);
-
-
 
   let $operators = document.querySelectorAll("button.operator");
   for (let i = 0; i < $operators.length; i++) {
     $operators[i].addEventListener('click', (event) => {
-      console.log(event.target.value);
+      $output.textContent = "";
       expression.push(event.target.value);
     })
-
   }
 
+  let calculate = () => {
+    let num1 = Number(expression.splice(0, 2).join(''));
+    let num2 = Number(expression.splice(0, -2).join(''));
+    // how to check if an array contains a specific character
+    let result;
+    if (expression.includes('+')) {
+      expression.splice(1, 1);
+      result = num1 + num2;
+    } else if (expression.includes('-')) {
+      expression.splice(1, 1);
+      result = num1 - num2;
+    } else if (expression.includes('/')) {
+      expression.splice(1, 1);
+      result = num1 / num2;
+    } else(expression.includes('*'));
+    expression.splice(1, 1);
+    result = num1 * num2;
+    $output.textContent = (`${result}`);
+    console.log();
+  } //keeps giving me NaN, maybe due to textContent, maybe due to variable "result"
+  //maybe due to operator being in array?
 
 
+  $equals.addEventListener('click', calculate);
 
 
 
@@ -64,6 +63,6 @@ let calculate = () => {
 
 })();
 
-  // function equal() =
+// function equal() =
 
-  // }
+// }
